@@ -3,6 +3,7 @@ import vk_api, os, requests, sqlite3, time, telebot
 from telebot.types import InputMediaPhoto
 from data_project import vk_token_ra, id_gossip_nf, id_gossip_nf_clone, tg_token_bot, id_tg_group
 
+
 def send_med_gr(sp_tg,cop,text_tg,id_post):
     media = []
 
@@ -17,6 +18,7 @@ def send_med_gr(sp_tg,cop,text_tg,id_post):
     if len(sp_tg) <= 1:
         text_tg+= f"<a href='{cop}'>Оригинальный пост</a>\n<a href='https://vk.com/wall{id_gossip_nf_clone}_{id_post}'>Скопированный пост</a>\n\n<a href='https://vk.com/gossipnfclone'>Gossip NF CLONE</a>\n<a href='https://vk.com/gossipnf'>Gossip NF</a>"
         bot.send_photo(id_tg_group, sp_tg[0], text_tg, parse_mode='HTML')
+
 
 def con(): # Создаём подключени
     os.system('cls')
